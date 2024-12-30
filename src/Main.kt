@@ -96,6 +96,20 @@ fun main() {
                 }while (y!= 0)
 
             }
+            5 -> {
+                var done: Double = 0.0
+                for ( task in all.tasks){
+                    if(task.status){
+                        done++
+                    }
+                }
+                if(all.tasks.size !=0) done = done *100/all.tasks.size
+
+                println("""
+                    ${String.format("%.2f", done)}% of tasks completed
+                    ${String.format("%.2f",100-done)}% of tasks was not completed
+                """.trimIndent())
+            }
 
 
 
