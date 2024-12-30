@@ -21,4 +21,23 @@ class Category(
         return false
     }
 
+    fun findTask(name: String): Task?{
+        for(task in tasks){
+            if(name == task.name){
+                return task
+            }
+        }
+        return null
+    }
+
+    override fun toString(): String {
+        var str = "$name\n\n"
+
+        for(task in tasks){
+            str += task.toString()
+        }
+
+        return str
+    }
+
 }

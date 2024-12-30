@@ -1,11 +1,11 @@
 class Task(
-    var name: String = "New Task",
     var description: String,
     var deadline: String,
     var priority: String,
-    var status: Boolean = false
-) {
+    var name: String = "New Task",
 
+) {
+    var status: Boolean = false
     fun changeName(name: String){
         this.name = name
     }
@@ -16,6 +16,17 @@ class Task(
 
     fun changeStatus(){
         status = !status
+    }
+
+    override fun toString(): String {
+        return """
+            $name
+            Description: $description
+            Deadline: $deadline
+            Priority: $priority
+            Status: $status
+            
+        """.trimIndent()
     }
 
 }
